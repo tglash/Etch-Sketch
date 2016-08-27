@@ -1,14 +1,18 @@
 .container{
-	background:red;
-	width:80%;
-	height:200px;
+	background:lightgrey;
+	width:600px;
+	height:600px;
 	margin:0 auto;
 }
 
-.div{
-	width:24.8%;
-	height:50%;
-	background-color: blue;
-	margin: .1%;
-	display: inline-block;
+.block{
+	width:10px;
+	height:10px;
+	margin:0px;
+	background-color: grey;
+	display:inline-block;
+}
+
+.color{
+	background-color: black;
 }
