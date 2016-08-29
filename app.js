@@ -1,32 +1,27 @@
-
 $(document).ready(function(){
-	$('.reset').click(function(){  											//Create a reset button
-		$('.block').removeClass('color');									//Remove the color from blocks
-		var squares = prompt('how many squares per side would you like?');	//Ask user how many squares they want		
-		var squareWidth = (960/squares);									//Determine the width of each square based on user prompt
-		var squareHeight = squareWidth;
-		var squareNum = (960/squareWidth);
+	var units = prompt("How many squares would you like? We can do between 1 and 200!");
+	//The width of a single square will be the number of the size of the container divided by units
 
 
-		for (var x = 0; x < squareNum; x++) {
-			var $block = $("<div class='block'></div>");
-			$($block).css({'width' : squareWidth , 'height' : squareHeight})
-			$('.container').append($block);
-			
-			for (var i = 0; i < squareNum ; i++) {
-				var $block = $("<div class='block'></div>");
-				$($block).css({'width' : squareWidth , 'height' : squareHeight})
-				$('.container').append($block);
-				console.log("derp")
-		};	
+	if (units > 0 && units <= 200) {
+
+		var side = $('.container').width()/units;
+
+
+		//Create a loop to append blocks onto container
+		for (var i = 0; i < units; i++) {
+			for (var x = 0; x < units; x++) {
+				$('.container').append("<div class='block'></div>");
+			};
+			$('.container').append("<div class='new-row'></div>");
 		};
-	
-		$('.block').hover(function(){
-			$(this).addClass('color');
-			console.log(squareNum);
-		});
+		
 
-	});
+		$('.block').css({'width' : side , 'height' : side});
 
-});
-
+		$( ".block" ).mouseenter( function() {
+			    $( this ).addClass( "color" );
+			  }
+			);
+	} else( alert("nope"));
+})

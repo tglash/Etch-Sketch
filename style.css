@@ -6,12 +6,12 @@
 }
 
 .block{
-	width:10px;
-	height:10px;
-	margin:0px;
 	background-color: grey;
 	display:inline-block;
-	border:solid .5px red;
+}
+
+.new-row{
+	clear:both;
 }
 
 .color{
